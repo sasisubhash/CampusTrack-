@@ -32,12 +32,6 @@ export function TaskCard({
   const isOverdue = dueDate < new Date() && task.status === 'PENDING'
   const daysUntilDue = Math.ceil((dueDate.getTime() - Date.now()) / (1000 * 60 * 60 * 24))
 
-  const getPriorityColor = () => {
-    if (isOverdue) return 'bg-red-100 text-red-800 dark:bg-red-900 dark:text-red-300'
-    if (daysUntilDue <= 2) return 'bg-orange-100 text-orange-800 dark:bg-orange-900 dark:text-orange-300'
-    return 'bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-300'
-  }
-
   const getStatusIcon = () => {
     switch (task.status) {
       case 'COMPLETED':
@@ -124,7 +118,7 @@ export function TaskCard({
             </DropdownMenuItem>
             <DropdownMenuSeparator />
             <DropdownMenuItem
-              onClick={() => onDelete(task.id)}
+              onClick={() => onDelete(task)}
               disabled={isDeleting}
               className="cursor-pointer text-destructive focus:text-destructive"
             >

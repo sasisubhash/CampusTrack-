@@ -69,8 +69,6 @@ export default function TasksPage() {
     return tasks.slice(startIdx, endIdx)
   }, [tasks, currentPage])
 
-  const totalPages = Math.ceil(tasks.length / PAGINATION_LIMIT)
-
   // Stats
   const stats = useMemo(() => {
     return {
@@ -185,7 +183,7 @@ export default function TasksPage() {
   }
 
   return (
-    <div className="p-6 space-y-6 max-h-[300px]">
+    <div className="p-6 space-y-6">
       {/* Header */}
       <div className="flex items-center justify-between">
         <div>
@@ -277,7 +275,7 @@ export default function TasksPage() {
               }
             />
           ) : (
-            <div className="space-y max-h-[600px] flex justify-between">
+            <div className="space-y-3">
               {paginatedTasks.map((task) => (
                 <TaskCard
                   key={task.id}
@@ -286,9 +284,8 @@ export default function TasksPage() {
                   onDelete={handleDelete}
                   onViewSubmissions={handleViewSubmissions}
                   isDeleting={deleteMutation.isPending && selectedTask?.id === task.id}
-                />
+                />  
               ))}
-
             </div>
           )}
         </CardContent>
