@@ -1,0 +1,105 @@
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+.logo {
+  height: 6em;
+  padding: 1.5em;
+  will-change: filter;
+  transition: filter 300ms;
+}
+.logo:hover {
+  filter: drop-shadow(0 0 2em #646cffaa);
+}
+.logo.react:hover {
+  filter: drop-shadow(0 0 2em #61dafbaa);
+}
+
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  a:nth-of-type(2) .logo {
+    animation: logo-spin infinite 20s linear;
+  }
+}
+
+.card {
+  padding: 2em;
+}
+
+.read-the-docs {
+  color: #888;
+}
+
+/* FullCalendar Mini Widget Styles */
+.calendar-mini .fc {
+  font-size: 0.85rem;
+}
+
+.calendar-mini .fc-toolbar-title {
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.calendar-mini .fc-button {
+  padding: 0.25rem 0.5rem;
+  font-size: 0.75rem;
+}
+
+.calendar-mini .fc-daygrid-day-number {
+  font-size: 0.75rem;
+  padding: 2px;
+}
+
+.calendar-mini .fc-event {
+  font-size: 0.65rem;
+  padding: 1px 2px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.calendar-mini .fc-daygrid-day {
+  cursor: pointer;
+}
+
+.calendar-mini .fc-daygrid-day:hover {
+  background-color: hsl(var(--muted) / 0.5);
+}
+
+/* Dark mode support for FullCalendar */
+.dark .calendar-mini .fc {
+  color: hsl(var(--foreground));
+}
+
+.dark .calendar-mini .fc-theme-standard td,
+.dark .calendar-mini .fc-theme-standard th {
+  border-color: hsl(var(--border));
+}
+
+.dark .calendar-mini .fc-button {
+  background-color: hsl(var(--primary));
+  border-color: hsl(var(--primary));
+  color: hsl(var(--primary-foreground));
+}
+
+.dark .calendar-mini .fc-button:hover {
+  background-color: hsl(var(--primary) / 0.9);
+}
+
+.dark .calendar-mini .fc-button-active {
+  background-color: hsl(var(--primary) / 0.8);
+}
+
+.dark .calendar-mini .fc-daygrid-day:hover {
+  background-color: hsl(var(--muted) / 0.3);
+}
